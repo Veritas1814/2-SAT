@@ -1,0 +1,7 @@
+vertex1,vertex2,color1,color2
+A,B,red,blue
+B,C,blue,green
+C,D,green,yellow
+D,H,yellow,black
+H,A,black,red
+D,P,yellow,green
