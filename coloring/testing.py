@@ -25,15 +25,18 @@ def gnp_random_connected_graph(n, p):
         for e in node_edges:
             if random.random() < p:
                 G.add_edge(*e)
+
+    for node in G.nodes():
+        G.nodes[node]['color'] = random.choice(['red', 'green', 'blue'])
+        
     return G
 
 nodes = random.randint(10,100)
 seed = random.randint(1,10)
-probability = 0.2
+probability = 0.01
 G = gnp_random_connected_graph(nodes,probability)
 
-# plt.figure(figsize=(8,5))
-# nx.draw(G, node_color='lightblue', 
-#         with_labels=True, 
-#         node_size=500)
-# plt.show()
+plt.figure(figsize=(8,5))
+nx.draw(G, node_color = [G.nodes[node]['color'] for node in G.nodes()],
+        with_labels=True)
+plt.show()
