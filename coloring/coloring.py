@@ -28,7 +28,7 @@ def remove_color(G, node, color):
                 add_color(G, neigh, G.nodes[node]['colors'][0])
 
 def create_implementation_graph(OG:nx.Graph):
-    Imp_G = nx.Graph() 
+    Imp_G = nx.DiGraph() 
     nodes = list(OG.nodes) + [-a for a in OG.nodes]
     Imp_G.add_nodes_from(nodes)
     for edge in OG.edges:
